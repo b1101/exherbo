@@ -1,0 +1,17 @@
+# Copyright 2016 Romans Volosatovs
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="baskerville" tag="${PV}" ]
+
+SUMMARY="Small command-line utilities"
+HOMEPAGE="https://github.com/thestinger/sutils"
+
+LICENCES="GPL"
+SLOT="0"
+PLATFORMS="~amd64"
+
+BUGS_TO="b1101@riseup.net"
+
+src_prepare() {
+    edo sed -i "s:usr/local:usr/$(exhost --target):" Makefile
+}
