@@ -1,4 +1,3 @@
-
 # Copyright (C) 2016 Romans Volosatovs <b1101@riseup.net>
 # Copyright (C) 2008 Stephen Bennett <spb@exherbo.org>
 # Copyright (C) 2008 Saleem Abdulrasool <compnerd@compnerd.org>
@@ -13,6 +12,7 @@ HOMEPAGE="https://github.com/thestinger/vte-ng"
 
 LICENCES="GPL-2"
 SLOT="2.91"
+REPLACING_IDS="dev-lib/vte:2.91::installed"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS="gnutls gobject-introspection gtk-doc
     vapi [[ requires = gobject-introspection ]]
@@ -29,6 +29,10 @@ DEPENDENCIES="
         virtual/pkg-config[>=0.19]
         gtk-doc? ( dev-doc/gtk-doc[>=1.13] )
     build+run:
+        !dev-libs/vte:2.91 [[
+            description = [ This is a patched version of vte ]
+            resolution = uninstall-blocked-after
+            ]]
         dev-libs/glib:2[>=2.40.0]
         gnome-desktop/gobject-introspection:1[>=0.9.0]
         sys-libs/zlib
