@@ -3,8 +3,8 @@
 
 require github [ user="baskerville" tag="${PV}" ]
 
-SUMMARY="Small command-line utilities"
-HOMEPAGE="https://github.com/thestinger/sutils"
+SUMMARY="Outputs X window titles"
+HOMEPAGE="https://github.com/thestinger/xtitle"
 
 LICENCES="public-domain"
 SLOT="0"
